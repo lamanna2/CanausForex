@@ -1,0 +1,20 @@
+name: Scanner forex
+
+on:
+  schedule:
+    - cron: "5 * * * 1-5"   # ogni ora al minuto 5, da lunedi a venerdi (orario UTC)
+  workflow_dispatch:         # permette di lanciarlo a mano per provarlo
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install yfinance pandas requests
+      - run: python scanner.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
