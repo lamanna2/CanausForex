@@ -33,7 +33,7 @@ MIN_AMP = 2.0       # ampiezza minima del movimento in ATR
 LVL_STOP = 0.75     # stop oltre il primo livello (0.5 - 1 ATR)
 LVL_MAX_AGE = 30    # il livello scade dopo queste candele
 LVL_MAX_TESTS = 2   # o dopo questi test
-USA_LIVELLI = True   # True = range + livelli | False = solo strategie range
+USA_LIVELLI = False   # True = range + livelli | False = solo strategie range
 
 PAIRS = [
     "EURUSD", "GBPUSD", "AUDUSD", "NZDUSD", "USDCAD", "USDCHF", "USDJPY",
